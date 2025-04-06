@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Adventure 🌌🔍</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #2a2a72, #009ffd);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            position: fixed;
+            height: calc(100vh - 40px);
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .sidebar h2 {
+            color: #00d4ff;
+            margin: 0 0 1rem 0;
+        }
+
+        .sidebar nav a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar nav a:hover {
+            color: #ffdd57;
+        }
+
+        .main-content {
+            margin-left: 300px;
+            width: calc(100% - 300px);
+        }
+
+        .header {
+            background: linear-gradient(45deg, #009ffd, #2a2a72);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: bounceIn 1s ease;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            color: #ffdd57;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            color: #333;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        h2 {
+            color: #009ffd;
+            margin-top: 0;
+        }
+
+        .tableau-wrapper {
+            position: relative;
+            padding-bottom: 75%; /* Adjusted for typical Tableau dashboard ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .tableau-wrapper:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .tableau-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, #ffdd57, #ff6b6b);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .insight-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            60% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .sidebar { position: static; width: 100%; height: auto; }
+            .main-content { margin-left: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Navigation 🧭</h2>
+            <nav>
+                <a href="#overview">Overview 🌟</a>
+                <a href="#tableau">Tableau Magic 🔮</a>
+                <a href="#insights">Insights 🎯</a>
+                <a href="#about">About Us 🤓</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>Analytics Adventure 🌌</h1>
+                <p>Unleash the Power of Data! ⚡</p>
+            </div>
+
+            <div class="section" id="overview">
+                <h2>Overview 🌟</h2>
+                <p>Step into a world of data-driven discovery with our Tableau-powered dashboard! 🚀</p>
+            </div>
+
+            <div class="section" id="tableau">
+                <h2>Tableau Magic 🔮</h2>
+                <p>Explore our interactive visualizations below! 👀</p>
+                <div class="tableau-wrapper">
+                    <iframe src="https://public.tableau.com/views/Book3_17425555534720/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link" 
+                        width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="section" id="insights">
+                <h2>Quick Insights 🎯</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3>Active Users 👩‍💻</h3>
+                        <p>18,500</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Sales 📈</h3>
+                        <p>$2.3M</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Retention 🕰️</h3>
+                        <p>82%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="about">
+                <h2>About Us 🤓</h2>
+                <p>We’re a team passionate about turning numbers into stories. Powered by Tableau and a sprinkle of creativity! ✨</p>
+            </div>
+
+            <footer>
+                <p>© 2025 Analytics Adventure | Built with 🌈 & 🦄</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll for nav links
+            const navLinks = document.querySelectorAll('.sidebar nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Card animation on scroll
+            const cards = document.querySelectorAll('.insight-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'bounceIn 0.8s ease forwards';
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            cards.forEach(card => observer.observe(card));
+
+            // Ensure Tableau iframe loads correctly
+            const tableauIframe = document.querySelector('.tableau-wrapper iframe');
+            tableauIframe.onload = () => {
+                console.log('Tableau dashboard loaded successfully! 🎉');
+            };
+        });
+    </script>
+</body>
+</html>
